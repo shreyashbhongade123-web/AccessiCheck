@@ -1,0 +1,9 @@
+target/
+data/
+docs/
+screenshots/
+*.zip
+.settings/
+.classpath
+.project
+.git/

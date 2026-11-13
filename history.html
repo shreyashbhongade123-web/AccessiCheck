@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scan History - AccessiCheck</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- HEADER: baaki pages jaisa -->
+  <header class="site-header">
+    <h1 class="logo">AccessiCheck</h1>
+    <nav aria-label="Main menu">
+      <a href="index.html">Home</a>
+      <a href="result.html">Result</a>
+      <a href="history.html" aria-current="page">History</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <h2>Scan History</h2>
+    <p class="note">Sample history with dummy data. Real data will come from the database.</p>
+
+    <!-- Progress ka chhota summary -->
+    <section class="score-card" aria-labelledby="progress-heading">
+      <h3 id="progress-heading">Your Progress</h3>
+      <p class="progress-text">Score improved from <strong>45</strong> to <strong>65</strong> in 3 scans.</p>
+    </section>
+
+    <!-- TABLE: pichhle scans -->
+    <section aria-labelledby="past-heading">
+      <h3 id="past-heading">Past Scans</h3>
+
+      <!-- Chhoti screen par table side me scroll ho sake -->
+      <div class="table-wrap">
+        <table class="history-table">
+          <caption>List of previous scans</caption>
+          <thead>
+            <tr>
+              <th scope="col">Scan ID</th>
+              <th scope="col">Date</th>
+              <th scope="col">Score</th>
+              <th scope="col">Issues</th>
+              <th scope="col">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3</td>
+              <td>22 Oct 2026</td>
+              <td>65/100</td>
+              <td>3</td>
+              <td><a href="result.html">View result</a></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>21 Oct 2026</td>
+              <td>58/100</td>
+              <td>5</td>
+              <td><a href="result.html">View result</a></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>20 Oct 2026</td>
+              <td>45/100</td>
+              <td>8</td>
+              <td><a href="result.html">View result</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="actions">
+      <a class="button" href="index.html">Scan new code</a>
+    </p>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>AccessiCheck - Internship project</p>
+  </footer>
+
+</body>
+</html>

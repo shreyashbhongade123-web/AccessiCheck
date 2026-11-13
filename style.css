@@ -1,0 +1,224 @@
+/* 1. Colors ek jagah define karo, baad me change karna easy */
+:root {
+  --navy: #12263f;
+  --white: #ffffff;
+  --light: #f3f6fa;
+  --accent: #0b7a5c;      /* green, button ke liye */
+  --text: #1c2733;
+}
+
+/* 2. Poore page ka basic style */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;          /* bada font = easy to read */
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--light);
+}
+
+/* 3. Skip link: normally chhupa rehta hai, Tab dabane par dikhta hai */
+.skip-link {
+  position: absolute;
+  left: -999px;
+}
+.skip-link:focus {
+  left: 10px;
+  top: 10px;
+  background: var(--white);
+  padding: 8px 12px;
+}
+
+/* 4. Header */
+.site-header {
+  background: var(--navy);
+  color: var(--white);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.logo { margin: 0; font-size: 24px; }
+.site-header nav a {
+  color: var(--white);
+  margin-left: 16px;
+  text-decoration: underline;
+}
+
+/* 5. Main content ki width limit */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.intro h2 { font-size: 30px; margin-bottom: 8px; }
+
+/* 6. Form ka box */
+.analyzer {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #c9d3de;
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin: 12px 0 6px;
+}
+textarea, input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #8896a6;
+  border-radius: 6px;
+  font-family: monospace;
+}
+
+/* 7. Button */
+button {
+  margin-top: 16px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 18px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover { background: #095c45; }
+
+/* 8. Keyboard focus: jo element select hai uske charo taraf outline */
+a:focus, button:focus, textarea:focus, input:focus {
+  outline: 3px solid #f5a623;
+  outline-offset: 2px;
+}
+
+/* 9. "What we check" list */
+.checks ul { padding-left: 20px; }
+.checks li { margin-bottom: 8px; }
+
+/* 10. Footer */
+.site-footer {
+  text-align: center;
+  padding: 16px;
+  color: #4a5a6a;
+}
+
+/* ===== Fix: "What we check" list me heading alag line me ===== */
+.checks li strong { display: block; }
+
+/* ===== RESULT PAGE ===== */
+
+.note { color: #4a5a6a; font-size: 16px; }
+
+/* 1. Score card */
+.score-card {
+  background: var(--white);
+  border: 1px solid #c9d3de;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px 0 24px;
+}
+.score-card h3 { margin-top: 0; }
+.score-number {
+  font-size: 56px;
+  font-weight: bold;
+  margin: 0;
+  color: var(--navy);
+}
+.score-number span { font-size: 24px; color: #4a5a6a; }
+
+/* Score bar */
+.bar {
+  background: #dfe6ee;
+  border-radius: 6px;
+  height: 16px;
+  overflow: hidden;
+  margin: 8px 0 16px;
+}
+.bar-fill {
+  background: var(--accent);
+  height: 100%;
+}
+
+/* Summary list ek line me */
+.summary {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+/* 2. Issue card */
+.issue {
+  background: var(--white);
+  border: 1px solid #c9d3de;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+.issue-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.issue-head h4 { margin: 0; font-size: 20px; }
+.line { color: #4a5a6a; margin: 4px 0 8px; }
+
+/* Priority badge: text bhi hai, sirf color pe depend nahi */
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.badge.critical { background: #b3261e; color: #ffffff; }
+.badge.medium   { background: #ffe2a8; color: #5a3a00; }
+.badge.low      { background: #d6ecdf; color: #0b4d38; }
+
+/* Before / After */
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+.compare h5 { margin: 0 0 6px; font-size: 16px; }
+.compare pre {
+  margin: 0;
+  padding: 10px;
+  font-size: 15px;
+  overflow-x: auto;
+  border-radius: 6px;
+  background: #f3f6fa;
+}
+.before pre { border-left: 5px solid #b3261e; }
+.after pre  { border-left: 5px solid var(--accent); }
+
+/* Mobile par ek ke neeche ek */
+@media (max-width: 600px) {
+  .compare { grid-template-columns: 1fr; }
+}
+
+/* 3. Buttons (links jo button jaise dikhein) */
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 18px;
+}
+.button.secondary { background: var(--navy); }
+.button:focus { outline: 3px solid #f5a623; outline-offset: 2px; }

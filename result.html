@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scan Result - AccessiCheck</title>
+  <!-- Same CSS file jo Home page me hai, taaki design same rahe -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- HEADER: Home page jaisa hi -->
+  <header class="site-header">
+    <h1 class="logo">AccessiCheck</h1>
+    <nav aria-label="Main menu">
+      <a href="index.html">Home</a>
+      <a href="result.html" aria-current="page">Result</a>
+      <a href="history.html">History</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <h2>Scan Result</h2>
+    <p class="note">Sample result with dummy data. Real data will come from the backend.</p>
+
+    <!-- 1. SCORE CARD: score aur issues ka summary -->
+    <section class="score-card" aria-labelledby="score-heading">
+      <h3 id="score-heading">Accessibility Score</h3>
+      <p class="score-number">65<span>/100</span></p>
+
+      <!-- Bar: 65% bhara hua -->
+      <div class="bar" role="img" aria-label="Score 65 out of 100">
+        <div class="bar-fill" style="width: 65%;"></div>
+      </div>
+
+      <ul class="summary">
+        <li><strong>3</strong> issues found</li>
+        <li><strong>2</strong> Critical</li>
+        <li><strong>1</strong> Medium</li>
+        <li><strong>0</strong> Low</li>
+      </ul>
+    </section>
+
+    <!-- 2. ISSUES LIST -->
+    <section aria-labelledby="issues-heading">
+      <h3 id="issues-heading">Issues and Fixes</h3>
+
+      <!-- ISSUE 1 -->
+      <article class="issue">
+        <header class="issue-head">
+          <h4>1. Missing alt text</h4>
+          <span class="badge critical">Critical</span>
+        </header>
+        <p class="line">Found on line 4</p>
+        <p><strong>Why it matters:</strong> A screen reader cannot tell a blind user what the image shows.</p>
+
+        <!-- Before / After code -->
+        <div class="compare">
+          <div class="before">
+            <h5>Before</h5>
+            <pre><code>&lt;img src="photo.jpg"&gt;</code></pre>
+          </div>
+          <div class="after">
+            <h5>After (fixed)</h5>
+            <pre><code>&lt;img src="photo.jpg"
+     alt="Describe the photo"&gt;</code></pre>
+          </div>
+        </div>
+      </article>
+
+      <!-- ISSUE 2 -->
+      <article class="issue">
+        <header class="issue-head">
+          <h4>2. Form field without label</h4>
+          <span class="badge critical">Critical</span>
+        </header>
+        <p class="line">Found on line 9</p>
+        <p><strong>Why it matters:</strong> Users do not know what to type in the box, and screen readers cannot announce it.</p>
+
+        <div class="compare">
+          <div class="before">
+            <h5>Before</h5>
+            <pre><code>&lt;input type="text" name="email"&gt;</code></pre>
+          </div>
+          <div class="after">
+            <h5>After (fixed)</h5>
+            <pre><code>&lt;label for="email"&gt;Email&lt;/label&gt;
+&lt;input type="text" id="email"
+       name="email"&gt;</code></pre>
+          </div>
+        </div>
+      </article>
+
+      <!-- ISSUE 3 -->
+      <article class="issue">
+        <header class="issue-head">
+          <h4>3. Empty link</h4>
+          <span class="badge medium">Medium</span>
+        </header>
+        <p class="line">Found on line 14</p>
+        <p><strong>Why it matters:</strong> A screen reader only says "link", so the user does not know where it goes.</p>
+
+        <div class="compare">
+          <div class="before">
+            <h5>Before</h5>
+            <pre><code>&lt;a href="about.html"&gt;&lt;/a&gt;</code></pre>
+          </div>
+          <div class="after">
+            <h5>After (fixed)</h5>
+            <pre><code>&lt;a href="about.html"&gt;About us&lt;/a&gt;</code></pre>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- 3. BUTTONS -->
+    <p class="actions">
+      <a class="button" href="index.html">Scan another code</a>
+      <a class="button secondary" href="history.html">View history</a>
+    </p>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>AccessiCheck - Internship project</p>
+  </footer>
+
+</body>
+</html>
